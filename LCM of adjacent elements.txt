@@ -1,3 +1,9 @@
+1.You are given an array of positive integers, arr.
+The set S consists of the LCM of every pair of adjacent elements. However, adjacent elements cannot wrap around the end of the array arr.
+Find the largest element in set S.
+
+
+
 import java.io.*;
 import java.util.*;
 import java.lang.Math;
