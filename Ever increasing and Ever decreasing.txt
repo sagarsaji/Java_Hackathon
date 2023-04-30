@@ -1,3 +1,12 @@
+1.You are given an array of integers, arr, of size array_length. It is given that arr, contains different array segments.
+An array segment is a continuous non-circular set of elements. This means that element don't wrap around the end of the array. A segment may have any length between 1 and array_length.
+An array segment is said to be:
+An ever-increasing segment if the numerical value of every element contained in the segment is strictly greater than the numerical value of the element to its left
+An ever-decreasing segment if the numerical value of every element contained in the segment is strictly less than the numerical value of the element to its left.
+Find the length of the longest segment in arr which is either ever-increasing or ever-decreasing.
+
+
+
 import java.io.*;
 import java.util.*;
 import java.lang.Math;
