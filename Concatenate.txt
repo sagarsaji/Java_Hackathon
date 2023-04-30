@@ -1,3 +1,8 @@
+1.You are given a binary string S of length N. Suppose you create another string T of size N*K by concatenating K copies of S together. 
+Find the maximum size of a substring of T consisting only of 0's.
+
+
+
 import java.io.*;
 import java.util.*;
 import java.lang.Math;
