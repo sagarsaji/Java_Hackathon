@@ -1,3 +1,7 @@
+1.Find the sum of prime factors of a given integer num. This means for num= 60 the prime factors of 60 are 2, 2, 3, 5 (duplicates are considered), hence, the sum=12.
+
+
+
 import java.io.*;
 import java.util.*;
 import java.lang.Math;
