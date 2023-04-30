@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.lang.Math;
+
+
+public class Solution {
+    public static int longestArraySegment(int array_length, List<Integer> arr) {
+
+       int[] increase = new int[array_length];
+       int[] decrease = new int[array_length];
+       increase[0] = 1;
+       decrease[0] = 1;
+       int len = 1;
+       for(int i=1;i<array_length;i++){
+           if(arr.get(i)>arr.get(i-1)){
+               increase[i] = increase[i-1]+1;
+           }
+           else{
+               increase[i] = 1;
+           }
+           if(arr.get(i)<arr.get(i-1)){
+               decrease[i] = decrease[i-1]+1;
+           }
+           else{
+               decrease[i] = 1;
+           }
+           len = Math.max(len,Math.max(increase[i],decrease[i]));
+       } 
+       return len;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+    
+        int array_length = Integer.parseInt(scan.nextLine().trim());
+        
+        List<Integer> arr = new ArrayList<>(array_length);
+        for(int j=0; j<array_length; j++) {
+            arr.add(Integer.parseInt(scan.nextLine().trim()));
+        }
+    
+        int result = longestArraySegment(array_length, arr);
+    
+        System.out.println(result);
+    }
+}

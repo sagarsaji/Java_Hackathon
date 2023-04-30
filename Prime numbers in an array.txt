@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+import java.lang.Math;
+
+
+public class Solution {
+    public static int findPrime(int array_length, List<Integer> arr) {
+        int flag=0,num=0,num1=0;
+        for(int i=0;i<array_length-1;i++){
+            if(arr.get(i)<2){
+                continue;
+            }
+            flag=0;
+            for(int j=2;j<arr.get(i)-1;j++){
+                if(arr.get(i)%j==0){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                num1=i;
+                num=arr.get(i);
+                Set<Integer> set = new HashSet<>(arr);
+                int diff=0;
+                for(int k=0;k<array_length-1;k++){
+                    diff=num-arr.get(k);
+                    if(set.contains(diff)){
+                        return num1;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+    
+        int array_length = Integer.parseInt(scan.nextLine().trim());
+        
+        List<Integer> arr = new ArrayList<>(array_length);
+        for(int j=0; j<array_length; j++) {
+            arr.add(Integer.parseInt(scan.nextLine().trim()));
+        }
+    
+        int result = findPrime(array_length, arr);
+    
+        System.out.println(result);
+    }
+}

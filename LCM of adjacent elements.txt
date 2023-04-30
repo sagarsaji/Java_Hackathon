@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+import java.lang.Math;
+
+
+public class Solution {
+    public static int largestAdjacentLCM(int array_length, List<Integer> arr) {
+        int gcd = 0;
+        ArrayList<Integer> lcmm = new ArrayList<>();
+        for(int i=0;i<array_length-1;i++){
+            int j=i+1;
+            if(j<=array_length){
+                int n1=arr.get(i);
+                int n2=arr.get(j);
+                for(int k=1;k<=n1 && k<=n2;k++){
+                    if(n1%k==0 && n2%k==0){
+                        gcd = k;
+                    }
+                }
+            int lcm = (n1*n2)/gcd;
+            lcmm.add(lcm);
+            }
+        }
+        int max=0;
+        for(int i:lcmm){
+            if(i>max){
+                max=i;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+    
+        int array_length = Integer.parseInt(scan.nextLine().trim());
+        
+        List<Integer> arr = new ArrayList<>(array_length);
+        for(int j=0; j<array_length; j++) {
+            arr.add(Integer.parseInt(scan.nextLine().trim()));
+        }
+    
+        int result = largestAdjacentLCM(array_length, arr);
+    
+        System.out.println(result);
+    }
+}
